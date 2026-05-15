@@ -24,7 +24,7 @@ export class Inquiry {
   serviceType!: string;
 
   @Column()
-  eventDate!: string;
+  eventDate!: Date;
 
   @Column()
   eventLocation!: string;
