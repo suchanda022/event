@@ -615,6 +615,59 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .hero {
+    padding: 140px 20px 60px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-copy {
+    margin: 18px 0 28px;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .event-type-slider {
+    padding: 20px 16px 18px;
+    margin-top: 18px;
+  }
+
+  .event-type-slide-card {
+    width: min(100%, 360px);
+    min-width: auto;
+  }
+
+  .event-type-slide-image {
+    aspect-ratio: 16 / 9;
+  }
+
   .client-logo-track-inner {
     gap: 16px;
   }

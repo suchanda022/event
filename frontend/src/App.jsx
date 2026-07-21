@@ -6,6 +6,13 @@ import ServicesPage from "./ServicesPage";
 import { services } from "./data/servicesData";
 import Footer from "./footer";
 import SplashScreen from "./SplashScreen";
+import p13 from "../herosection/P13.jpeg";
+import pic7 from "../herosection/pic7.jpg";
+import pic2 from "../herosection/pic2.jpeg";
+import pic3 from "../herosection/pic3.jpeg";
+import pic4 from "../herosection/pic4.jpeg";
+import pic5 from "../herosection/pic5.jpeg";
+import pic6 from "../herosection/pic6.jpeg";
 
 const getRoute = () => {
   const path = window.location.pathname;
@@ -62,15 +69,7 @@ function App() {
     };
   }, [showSplash]);
 
-  const heroImages = [
-    "/herosection/p13.jpeg",
-    "/herosection/pic7.jpeg",
-    "/herosection/pic2.jpeg",
-    "/herosection/pic3.jpg",
-    "/herosection/pic4.jpeg",
-    "/herosection/pic5.jpeg",
-    "/herosection/pic6.jpeg",
-  ];
+  const heroImages = [p13, pic7, pic2, pic3, pic4, pic5, pic6];
   const [activeHeroIndex, setActiveHeroIndex] = useState(0);
 
   useEffect(() => {
