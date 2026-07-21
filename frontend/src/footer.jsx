@@ -44,7 +44,7 @@ export default function Footer() {
             WhatsApp Chat
           </a>
 
-          <p>Kolkata, West Bengal, India</p>
+          <p>Siliguri, West Bengal, India</p>
         </div>
       </div>
 

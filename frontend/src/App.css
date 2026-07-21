@@ -10,6 +10,37 @@ body {
   scroll-behavior: smooth;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes premiumReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes premiumGlow {
+  0%,
+  100% {
+    box-shadow: 0 18px 40px rgba(0, 191, 255, 0.14);
+  }
+  50% {
+    box-shadow: 0 24px 58px rgba(0, 191, 255, 0.24);
+  }
+}
+
 .app {
   min-height: 100vh;
   width: 100%;
@@ -606,12 +637,15 @@ nav a:hover {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 28px;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .event-type-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.28);
+  border-color: rgba(0, 191, 255, 0.28);
 }
 
 .event-type-image {
@@ -671,13 +705,17 @@ nav a:hover {
   border: 1px solid rgba(255, 255, 255, 0.08);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease,
+    border-color 0.35s ease, background 0.35s ease;
 }
 
 .service-list-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.01);
   border-color: rgba(0, 191, 255, 0.24);
-  box-shadow: 0 30px 60px rgba(0, 119, 255, 0.14);
+  box-shadow: 0 32px 64px rgba(0, 119, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .services-page {
@@ -713,12 +751,16 @@ nav a:hover {
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.01);
   box-shadow: 0 30px 60px rgba(0, 119, 255, 0.14);
+  border-color: rgba(0, 191, 255, 0.24);
 }
 
 .service-card h3 {
@@ -738,11 +780,12 @@ nav a:hover {
   border: 1px solid rgba(255, 255, 255, 0.08);
   cursor: pointer;
   text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .service-card-button:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.01);
   box-shadow: 0 30px 60px rgba(0, 119, 255, 0.14);
   border-color: rgba(0, 191, 255, 0.24);
 }
@@ -909,6 +952,14 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.media-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+  border-color: rgba(0, 191, 255, 0.28);
 }
 
 .media-image-wrapper {
@@ -1036,6 +1087,40 @@ nav a:hover {
 .about-panel--featured {
   padding: 46px 44px;
   min-height: 340px;
+}
+
+.about-featured-content {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+.about-founder-image {
+  width: min(180px, 100%);
+  aspect-ratio: 1 / 1;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.about-founder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-founder-text {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+@media (min-width: 980px) {
+  .about-featured-content {
+    grid-template-columns: minmax(0, 180px) 1fr;
+  }
 }
 
 .about-panel--accent {
@@ -1363,6 +1448,85 @@ nav a:hover {
   text-decoration: none;
   font-weight: 700;
   z-index: 100;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.whatsapp-chat:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 24px 50px rgba(18, 140, 126, 0.45);
+}
+
+.hero-content,
+.section-heading,
+.event-type-card,
+.service-list-card,
+.service-card,
+.service-card-button,
+.about-panel,
+.owner-panel,
+.contact-card,
+.contact-cta,
+.client-category,
+.client-logo-bubble,
+.media-card,
+.subpage-hero,
+.clients-logos-section {
+  animation: premiumReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.event-type-card:nth-child(2),
+.service-list-card:nth-child(2),
+.service-card:nth-child(2),
+.client-category:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.event-type-card:nth-child(3),
+.service-list-card:nth-child(3),
+.service-card:nth-child(3),
+.client-category:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.event-type-card:nth-child(4),
+.service-list-card:nth-child(4),
+.service-card:nth-child(4),
+.client-category:nth-child(4) {
+  animation-delay: 0.16s;
+}
+
+.about-panel:hover,
+.contact-card:hover,
+.client-category:hover,
+.client-logo-bubble:hover,
+.subpage-hero:hover,
+.owner-panel:hover,
+.contact-cta:hover,
+.logos-grid img:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 25px 60px rgba(0, 191, 255, 0.14);
+  border-color: rgba(0, 191, 255, 0.26);
+}
+
+.client-logo-bubble,
+.logos-grid img {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease,
+    filter 0.35s ease, border-color 0.35s ease;
+}
+
+.logos-grid img:hover {
+  filter: brightness(1.15) saturate(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .footer {

@@ -5,6 +5,7 @@ import ContactPage from "./ContactPage";
 import ServicesPage from "./ServicesPage";
 import { services } from "./data/servicesData";
 import Footer from "./footer";
+import SplashScreen from "./SplashScreen";
 
 const getRoute = () => {
   const path = window.location.pathname;
@@ -22,6 +23,7 @@ function App() {
   const [nextRoute, setNextRoute] = useState(getRoute());
   const [transitionPhase, setTransitionPhase] = useState("visible");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -46,6 +48,19 @@ function App() {
 
     return () => window.clearTimeout(timeout);
   }, [nextRoute, transitionPhase]);
+
+  useEffect(() => {
+    // Add animation class to body when splash screen is shown
+    if (showSplash) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [showSplash]);
 
   const heroImages = [
     "/herosection/p13.jpeg",
@@ -113,7 +128,9 @@ function App() {
   const servicesRoute = route.startsWith("/services");
 
   return (
-    <div className="app">
+    <>
+      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+      <div className={`app ${!showSplash ? "show-content" : ""}`}>
       <div className={`route-transition ${transitionPhase}`}>
         <header className="header">
           <div className="brand">
@@ -121,6 +138,8 @@ function App() {
               src="logos/PKSSOLUTIONS.png"
               alt="Company Logo"
               className="brand-logo"
+              loading="eager"
+              decoding="async"
             />
             <div>
               <span className="brand-name">Event Services</span>
@@ -193,7 +212,12 @@ function App() {
                       index === activeHeroIndex ? "active" : ""
                     }`}
                   >
-                    <img src={src} alt={`Hero Slide ${index + 1}`} />
+                    <img
+                      src={src}
+                      alt={`Hero Slide ${index + 1}`}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      decoding="async"
+                    />
                   </div>
                 ))}
               </div>
@@ -406,6 +430,8 @@ function App() {
                                   src={logo.src}
                                   alt={logo.alt || section.title}
                                   className="client-logo-image"
+                                  loading="lazy"
+                                  decoding="async"
                                 />
                               ) : (
                                 <div
@@ -435,11 +461,10 @@ function App() {
         >
           WhatsApp Chat
         </a>
-
-
       </div>
       <Footer />
     </div>
+  </>
   );
 }
 

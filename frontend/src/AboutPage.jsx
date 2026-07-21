@@ -12,49 +12,63 @@ export default function AboutPage({ onNavigate }) {
     <main className={`page-shell about-page ${mounted ? "loaded" : ""}`}>
       <section className="subpage-hero">
         <span className="eyebrow">About</span>
-        <h1>
-          We deliver premium live experiences that feel bold, polished, and
-          effortless.
-        </h1>
+        <h1>40 Years of Trusted Event Excellence.</h1>
         <p>
-          Every event is designed with a strong visual identity, reliable
-          technical support, and a clear sense of purpose. Our work looks
-          premium, performs flawlessly, and stays on brand from concept to show
-          day.
+          At PKS Event Solution, we bring over four decades of experience,
+          dedication, and excellence to the event industry. Founded by Mr.
+          Pabitra Kumar Saha, our company has built a reputation for
+          reliability, professionalism, and exceptional client service.
         </p>
       </section>
 
       <section className="about-grid">
         <div className="about-panel about-panel--featured animated-panel">
           <span className="panel-label">About</span>
-          <h2>
-            We are an event production studio for brands, corporates, and
-            governments.
-          </h2>
-          <p>
-            Our team combines stage design, AV engineering, lighting, rigging,
-            media coordination, and on-site operations to create live moments
-            that engage audiences and earn trust.
-          </p>
+          <div className="about-featured-content">
+            <div className="about-founder-image">
+              <img
+                src="/images/pabitrasaha2.jpeg"
+                alt="Founder portrait"
+                loading="lazy"
+              />
+            </div>
+            <div className="about-founder-text">
+              <h2>We deliver trusted event solutions backed by experience.</h2>
+              <p>
+                PKS Event Solution has become a trusted partner for weddings,
+                corporate events, concerts, cultural programs, and social
+                gatherings of every scale. We are committed to delivering
+                excellence with professionalism, passion, and attention to every
+                detail, ensuring every event is memorable and flawlessly
+                executed.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="about-panel about-panel--accent animated-panel">
           <span className="panel-label">Vision</span>
-          <h3>Premium execution, every time.</h3>
+          <h3>Making every event memorable and stress-free.</h3>
           <p>
-            We believe that strong events should feel seamless, cinematic, and
-            completely aligned with the client’s message. Our goal is to make
-            every production feel like a high-end, finished experience.
+            PKS Event Solution has become a trusted partner for weddings,
+            corporate events, concerts, cultural programs, and social gatherings
+            of every scale. We are committed to delivering excellence with
+            professionalism, passion, and attention to every detail, ensuring
+            every event is memorable and flawlessly executed.
           </p>
         </div>
 
         <div className="about-panel about-panel--soft animated-panel">
           <span className="panel-label">What we do?</span>
-          <h3>Full technical delivery for flagship events.</h3>
+          <h3>Complete event production solutions.</h3>
           <p>
-            From LED walls, rigging, power, and lighting to broadcast-ready
-            sound, media streams, and event infrastructure, we handle the
-            details that make premium events feel secure and spectacular.
+            We offer a complete range of event support services, including:
+            Professional Sound Systems DJ Setups Live Band Arrangements LED
+            Rentals Generator Services Hotel Bookings Stage & Lighting Solutions
+            Customized Event Management Services Whether you're planning an
+            intimate celebration, a grand wedding, a corporate gathering, or a
+            large-scale concert, PKS Event Solution provides complete event
+            support tailored to your needs.
           </p>
         </div>
       </section>
@@ -64,19 +78,25 @@ export default function AboutPage({ onNavigate }) {
         <div className="owner-copy-block">
           <div className="owner-image-wrapper">
             <img
-              src="/images/Event Production & setup/ar-rehman.jpeg"
-              alt="Owner portrait"
+              src="/images/pabitrasaha.jpeg"
+              alt="Founder portrait"
               loading="lazy"
             />
           </div>
           <div className="owner-copy">
-            <span className="panel-label">Owner</span>
-            <h2>Rohit Singh</h2>
+            <span className="panel-label">Founder</span>
+            <h2>Mr. Pabitra Kumar Saha</h2>
             <p>
-              Rohit leads the team with 12+ years of experience in large-scale
-              events. His specialty is translating complex requirements into
-              elegant technical production that looks refined and stays on
-              schedule.
+              Mr. Pabitra Kumar Saha has been serving as the Secretary of the
+              Siliguri Sound Association for the past 20 years and is widely
+              recognized for his leadership, integrity, and commitment to
+              delivering quality event solutions.
+            </p>
+            <p>
+              With more than four decades of experience, he has led PKS Event
+              Solution in delivering successful weddings, corporate events,
+              concerts, cultural programs, and social gatherings while earning
+              the trust of clients across the region.
             </p>
             <button
               type="button"
@@ -90,6 +110,19 @@ export default function AboutPage({ onNavigate }) {
             </button>
           </div>
         </div>
+      </section>
+
+      <section className="about-closing-text animated-panel">
+        <p>
+          Whether you're planning an intimate celebration, a grand wedding, a
+          corporate gathering, or a large-scale concert, PKS Event Solution is
+          committed to delivering excellence with professionalism, passion, and
+          attention to every detail.
+        </p>
+        <p>
+          PKS Event Solution – 40 Years of Trust, Quality, and Memorable
+          Experiences.
+        </p>
       </section>
 
       <section className="clients-logos-section animated-panel">

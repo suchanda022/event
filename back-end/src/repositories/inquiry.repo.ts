@@ -33,7 +33,8 @@ export async function getAllInquiries() {
 export async function updateInquiryStatus(
   id: number,
   status: string
-) {
+)
+{
 
   await repo.update(id, {
     status,

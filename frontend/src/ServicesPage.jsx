@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
 import { services, serviceDetails } from "./data/servicesData";
 
 function ServiceList({ onNavigate }) {
@@ -36,7 +37,7 @@ function ServiceDetail({ serviceId, onNavigate }) {
 
   useEffect(() => {
     setSelectedMediaId(service?.mediaCards?.[0]?.id || null);
-  }, [serviceId]);
+  }, [service?.mediaCards]);
 
   const openViewer = (images, index) => {
     if (!images || !images.length) return;
@@ -264,10 +265,18 @@ function ServiceDetail({ serviceId, onNavigate }) {
   );
 }
 
+ServiceList.propTypes = {
+  onNavigate: PropTypes.func.isRequired,
+};
+
+ServiceDetail.propTypes = {
+  serviceId: PropTypes.string,
+  onNavigate: PropTypes.func.isRequired,
+};
+
 export default function ServicesPage({ route, onNavigate }) {
   const serviceId =
     route === "/services" ? null : route.replace("/services/", "");
-  const currentPath = serviceId ? `/services/${serviceId}` : "/services";
 
   return (
     <section className="services-page" id="services-page">
@@ -287,3 +296,8 @@ export default function ServicesPage({ route, onNavigate }) {
     </section>
   );
 }
+
+ServicesPage.propTypes = {
+  route: PropTypes.string.isRequired,
+  onNavigate: PropTypes.func.isRequired,
+};
