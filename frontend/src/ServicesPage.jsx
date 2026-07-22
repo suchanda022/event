@@ -161,13 +161,17 @@ function ServiceDetail({ serviceId, onNavigate }) {
                   >
                     {src.endsWith(".mp4") ? (
                       <video
-                        src={src}
                         controls
                         autoPlay
                         muted
                         loop
+                        playsInline
+                        preload="metadata"
                         className="media-preview"
-                      />
+                      >
+                        <source src={src} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                     ) : (
                       <img
                         src={src}
