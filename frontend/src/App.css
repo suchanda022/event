@@ -225,18 +225,33 @@ nav a:hover {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(1, 7, 20, 0.65), rgba(0, 0, 0, 0.7));
-  z-index: 1;
-}
+  background:
+      radial-gradient(circle at 22% 18%, rgba(0, 191, 255, 0.12), transparent 24%),
+      radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.05), transparent 18%),
+      linear-gradient(180deg, rgba(1, 7, 20, 0.32), rgba(0, 0, 0, 0.52));
+    z-index: 1;
+  }
 
-.hero-content {
-  position: relative;
-  max-width: 720px;
-  text-align: left;
-  z-index: 2;
-}
+  .hero-content {
+    position: relative;
+    max-width: 620px;
+    width: min(100%, 620px);
+    text-align: left;
+    z-index: 2;
+    padding: 34px 34px 32px;
+    background: rgba(4, 15, 32, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 32px;
+    box-shadow: 0 28px 76px rgba(0, 0, 0, 0.26);
+    backdrop-filter: blur(16px);
+  }
 
-.eyebrow {
+  .hero-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at top left, rgba(0, 191, 255, 0.09), transparent 48%);
   display: inline-block;
   color: #7fd1ff;
   font-size: 0.95rem;
@@ -371,7 +386,8 @@ nav a:hover {
 }
 
 .event-type-slide-card {
-  width: 540px;
+  flex: 0 0 min(86vw, 540px);
+  width: min(86vw, 540px);
   scroll-snap-align: center;
   opacity: 0;
   transform: translateY(40px) scale(0.96);
@@ -648,7 +664,8 @@ nav a:hover {
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    padding: 0 10px;
+    padding: 28px 22px;
+    border-radius: 28px;
   }
 
   .hero h1 {
@@ -674,24 +691,32 @@ nav a:hover {
   }
 
   .event-type-slider {
-    padding: 20px 12px 18px;
+    display: flex;
+    gap: 18px;
+    padding: 20px 16px 28px;
     margin-top: 18px;
-    justify-content: flex-start;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    scroll-padding-inline: 12px;
   }
 
-  .event-type-slide-card {
-    width: min(92vw, 340px);
-    min-width: auto;
+  .event-type-slider > .event-type-slide-card {
+    flex: 0 0 min(86vw, 340px);
+    width: min(86vw, 340px);
+    min-width: min(86vw, 340px);
     scroll-snap-align: center;
   }
 
   .event-type-slide-image {
     aspect-ratio: 16 / 9;
-    min-width: 100%;
+    width: 100%;
+    border-radius: 32px;
+    overflow: hidden;
+  }
+
+  .event-type-slide-card .event-type-image,
+  .event-type-slide-card .event-type-slide-image {
+    border-radius: 32px;
   }
 
   .event-type-tag {
