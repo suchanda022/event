@@ -623,6 +623,8 @@ nav a:hover {
   }
 
   nav {
+    width: 100%;
+    display: flex;
     flex-wrap: wrap;
     gap: 14px;
   }
@@ -633,7 +635,7 @@ nav a:hover {
 
   .hero {
     padding: 130px 16px 50px;
-    min-height: auto;
+    min-height: calc(100vh - 90px);
     align-items: flex-end;
   }
 
@@ -646,7 +648,7 @@ nav a:hover {
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    padding: 0 8px;
+    padding: 0 10px;
   }
 
   .hero h1 {
@@ -672,18 +674,24 @@ nav a:hover {
   }
 
   .event-type-slider {
-    padding: 20px 16px 18px;
+    padding: 20px 12px 18px;
     margin-top: 18px;
     justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-inline: 12px;
   }
 
   .event-type-slide-card {
-    width: min(100%, 340px);
+    width: min(92vw, 340px);
     min-width: auto;
+    scroll-snap-align: center;
   }
 
   .event-type-slide-image {
     aspect-ratio: 16 / 9;
+    min-width: 100%;
   }
 
   .event-type-tag {
