@@ -478,20 +478,19 @@ function App() {
               </section>
             </>
           )}
-
-          <a
-            className="whatsapp-chat"
-            href="https://wa.me/919474960506?text=Hello%20Event%20Team,%20I%20need%20help%20with%20an%20event%20project"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Chat with us on WhatsApp"
-          >
-            <span className="whatsapp-chat-icon" aria-hidden="true">
-              💬
-            </span>
-            WhatsApp Chat
-          </a>
         </div>
+        <a
+          className="whatsapp-chat"
+          href="https://wa.me/919474960506?text=Hello%20Event%20Team,%20I%20need%20help%20with%20an%20event%20project"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Chat with us on WhatsApp"
+        >
+          <span className="whatsapp-chat-icon" aria-hidden="true">
+            💬
+          </span>
+          WhatsApp Chat
+        </a>
         <Footer />
       </div>
     </>
