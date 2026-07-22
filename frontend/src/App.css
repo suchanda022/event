@@ -1573,6 +1573,9 @@ nav a:hover {
   position: fixed;
   right: 24px;
   bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background: linear-gradient(135deg, #25d366, #128c7e);
   color: #ffffff;
   padding: 14px 22px;
@@ -1587,6 +1590,19 @@ nav a:hover {
 .whatsapp-chat:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 24px 50px rgba(18, 140, 126, 0.45);
+}
+
+.whatsapp-chat-icon {
+  font-size: 1.05rem;
+}
+
+@media (max-width: 720px) {
+  .whatsapp-chat {
+    right: 16px;
+    bottom: 16px;
+    width: calc(100% - 32px);
+    justify-content: center;
+  }
 }
 
 .hero-content,
